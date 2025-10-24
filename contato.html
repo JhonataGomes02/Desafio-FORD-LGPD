@@ -37,31 +37,39 @@
             </div>
             <div>
                 <h2 class="titulo">Sobre Você</h2>
-                <form onsubmit="Post(this);">
-                    <input type="text" name="nome" placeholder="NOME*" class="fordform" required>
-                    <input type="text" name="email" placeholder="E-MAIL*" class="fordform" required>
-                    <input type="text" name="telefone" placeholder="TELEFONE*" class="fordform" required>
-                    
-                    <input type="text" name="cpf" placeholder="CPF" class="fordform">
-                    <input type="text" name="sobrenome" placeholder="SOBRENOME" class="fordform">
+<form onsubmit="Post(this);">
+    <input type="text" name="nome" placeholder="NOME*" class="fordform" required>
+    <input type="text" name="email" placeholder="E-MAIL*" class="fordform" required>
+    <input type="text" name="telefone" placeholder="TELEFONE*" class="fordform" required>
+
+    <select name="tipo_contato" class="fordform" required>
+        <option value="" selected>TIPO DE CONTATO*</option>
+        <option value="elogio">Elogio</option>
+        <option value="reclamacao">Reclamação</option>
+        <option value="solicitacao">Solicitação</option>
+    </select>
     
-                    <select name="contato" class="fordform" required>
-                        <option selected>COMO DESEJA SER CONTATADO</option>
-                        <option>TELEFONE</option>
-                        <option>E-MAIL</option>
-                    </select>
-    
-                    <select name="tipo_contato" class="fordform" required>
-                        <option value="" selected>TIPO DE CONTATO*</option>
-                        <option value="elogio">Elogio</option>
-                        <option value="reclamacao">Reclamação</option>
-                        <option value="solicitacao">Solicitação</option>
-                    </select>
-    
-                    <textarea name="mensagem" placeholder="MENSAGEM*" class="fordform" rows="5" required></textarea>
-    
-                    <button type="submit">Enviar</button>
-                </form>
+    <textarea name="mensagem" placeholder="MENSAGEM*" class="fordform" rows="5" required></textarea>
+
+    <div class="lgpd-container">
+        <p class="lgpd-text">
+        Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será possível editar ou remover tais dados.  
+            <a href="https://www.ford.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>.
+        </p>
+
+        <div class="lgpd-checkbox">
+            <input type="checkbox" id="lgpd_consent" name="lgpd_consent" onchange="validateLGPD()">
+            <label for="lgpd_consent">Sim. Li e concordo com os Termos e Condições</label>
+        </div>
+
+        <div class="lgpd-checkbox">
+            <input type="checkbox" id="lgpd_comms" name="lgpd_comms">
+            <label for="lgpd_comms">Sim. Também quero receber descontos e novidades.</label>
+        </div>
+    </div>
+
+    <button type="submit" id="btn-enviar" disabled>Enviar</button>
+</form>
             </div>
         </div>
     </main>
